@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+ --yellow : #D9832C;
+ --white-op6  : #ffffff9a;
+ --white-op7  : #ffffffb3;
+ --half-yellow : #AA8667;
+ --half-black :#2D2D2D;
+ --wahite : white;
+}
+
+.clipy-star{
+    /* height: 25px ; */
+    /* width: 25px; */
+    background: var(--yellow);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.carousel-slide{
+
+
+background-size: cover !important ;    
+background-position: center !important;
+/* background-image: url("https://cdn.pixabay.com/photo/2021/12/18/06/13/hotel-6878054_1280.jpg") !important; */
+background-repeat: no-repeat;
+}
+
+
+@keyframes slide-in-left {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-slide-in-left {
+    animation: slide-in-left 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slide-in-right 0.5s ease-out forwards;
+  }
+  .zoomIn{
+    animation: zoom .3s linear;
+  }
+
+@keyframes zoom{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform:  scale(1);
+    }
+}
+
+.mobile-nav{
+
+  height: 300px;
+  width: 250px;
+  background-color: #727272;
+  position: fixed;
+  left: 50%;
+  top: -200%;
+  z-index: 6;
+  transform: translate(-50% , -50%);
+  animation: clzNav .2s linear;
+}
+
+
+
+.mobile-nav-open{
+  height: 300px;
+  width: 250px;
+  background-color: #727272;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 6;
+  transform: translate(-50% , -50%);
+  animation: openNav .4s linear;
+}
+
+@keyframes clzNav {
+  0%{
+    top: 50%;
+    opacity: 1;
+  }
+  100%{
+    top: -100%;
+    opacity: 0;
+    
+
+  }
+  
+}
+
+@keyframes
+ openNav {
+  0%{
+    top: -100%;
+    opacity: 0;
+  }
+  100%{
+    top: 50%;
+    opacity: 1;
+    
+
+  }
+  
+}
+
+
+
+
+
+.faq-ans{
+  display: none;
+  transition: all .3s linear;
+
+}
+
+.faq-ans-open{
+  display: block;  
+  animation: faq .3s ease-in;
+  transition: all .3s linear;
+}
+
+
+
+.grid-card-figure{
+  background: linear-gradient(-45deg, #2D2D2D,  #2d2d2d5e,  rgba(255, 255, 255, 0.169), #2D2D2D);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.submit-loading{
+  /* height: 30px; */
+  /* width: 30px; */
+  /* border: 3px solid var(--half-black); */
+  border-radius: 50%;
+  border-top: 3px solid white;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+
+  }
+}
+
+
+
+.vibrate{
+	-webkit-animation: vibrate-1 0.3s linear infinite both;
+	        animation: vibrate-1 0.3s linear infinite both;
+}
+
+ @-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+
+
+/* rhobmos Shapes in About.jsx */
+
+.rhombus-sahpe{
+  height: 25px;
+  width: 25px;
+  background-color: var(--white-op6);
+  clip-path: polygon(50% 0%, 84% 49%, 50% 100%, 18% 49%);
+}
+
+@media (max-width: 767px) {
+  /* Add your custom styles here */
+  .rhombus-sahpe{
+    height: 25px;
+    width: 25px;
+    clip-path: polygon(50% 22%, 100% 47%, 50% 71%, 0 49%);
+  }
+
+}
